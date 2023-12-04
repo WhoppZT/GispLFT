@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="../STYLE/webStyle.css" >
+   
+    
+    
+    <title>Document</title>
+</head>
+<body>
+
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="item-header-1"><img src="../src/img/Logo-gisp.jpeg" title="Logo-gisp" alt="Logo-gisp"></div>
+            <div class="item-header-2"><a href="index.html">INICIO</a></div>
+            <div class="item-header-3">
+                <a href="">ACERCA DE</a>
+                <div class="dropdown-content">
+                    
+                    <a href="Quienes_somos.html">QUIENES SOMOS</a>
+                </div>
+            </div>
+            <div class="item-header-4">
+                <a href="">MAPAS</a>
+                <div class="dropdown-content">
+                    <a href="cies.html">CIES</a>
+                    <a href="">CEDRUM</a>
+                    <a href="">CALZADO</a>
+                </div>
+            </div>
+          
+            
+            <div class="theme-toggle" title="Toggle theme">
+                <span class="theme-toggle-sr">Modo Oscuro</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  width="1em"
+                  height="1em"
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  class="theme-toggle__classic"
+                  viewBox="0 0 32 32"
+                >
+                  <clipPath id="theme-toggle__classic__cutout">
+                    <path d="M0-5h30a1 1 0 0 0 9 13v24H0Z" />
+                  </clipPath>
+                  <g clip-path="url(#theme-toggle__classic__cutout)">
+                    <circle cx="16" cy="16" r="9.34" />
+                    <g stroke="currentColor" stroke-width="1.5">
+                      <path d="M16 5.5v-4" />
+                      <path d="M16 30.5v-4" />
+                      <path d="M1.5 16h4" />
+                      <path d="M26.5 16h4" />
+                      <path d="m23.4 8.6 2.8-2.8" />
+                      <path d="m5.7 26.3 2.9-2.9" />
+                      <path d="m5.8 5.8 2.8 2.8" />
+                      <path d="m23.4 23.4 2.9 2.9" />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+
+    </header>
+<br><br><br>
+    <main>
+
+        <form id="miFormulario" action="">
+            <div class="busqueda">
+                <label class="label" for="nameBusqueda">¿A dónde quieres ir?</label>
+                <input type="text" name="nameBusqueda" id="nameBusqueda" placeholder="Buscar lugares...">
+                <button id="miBoton" type="button">Buscar</button>
+                <datalist id="lugares">
+                    <option value="cafeteria" id="cafecito">Cafetería</option>
+                    <option value="canchaCies">Cancha Cies</option>
+                    <option value="biblioteca">Edificio Biblioteca</option>
+                </datalist>
+            </div>
+        </form>
+     
+        
+          <div class="tutos">
+            <div class="card" style="width: 18rem; margin-bottom: 10px;">
+                <img src="../src/img/jolot.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Servicio de mapa</h5>
+                    <p class="card-text">Para conocer cómo funciona nuestro servicio de mapa, haz clic en el botón</p>
+                    <button type="button" class="btn btn-primary" onclick="openModal()">Click aquí</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="otrotuto">
+            <div class="card" style="width: 18rem; margin-bottom: 10px;">
+                <img src="../src/img/ajolote.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Sistema de ruta</h5>
+                    <p class="card-text">Para conocer cómo funciona nuestro servicio de mapa, haz clic en el botón</p>
+                    <button type="button" class="btn btn-primary" onclick="openModals()">Click aquí</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Ventana Modal para "Servicio de mapa" -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Servicio de mapa</h3>
+                <p>Puedes interactuar haciendo clic en recuadros del mapa y podrás ver información de cada lugar. Cada información contiene un botón para trazar ruta, lo cual permite que el usuario pueda ver la ruta para llegar a su destino.</p>
+            </div>
+        </div>
+        
+        <!-- Ventana Modal para "Sistema de ruta" -->
+        <div id="myModal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModals()">&times;</span>
+                <h3>Servicio de ruta</h3>
+                <p>Al seleccionar un lugar o buscarlo con la barra buscadora, el sistema tiene la opción de trazar ruta. Al oprimir la opción, marcará una ruta que parte desde la entrada principal hacia el destino.</p>
+            </div>
+        </div>
+
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="exampleModalLabel">Modal title</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="ruta">Trazar Rutica</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="miModalLabel">Barismo</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <button id="ruta" class="btn btn-primary">Trazar una ruta</button>
+                </div>
+              </div>
+            </div>
+          </div>
+       <script>
+        // Función para trazar la ruta y cerrar el modal
+        function closeModal() {
+          var modal = document.getElementById("miModal");
+          modal.style.display = "none";
+      }
+      
+document.getElementById("ruta").addEventListener("click", function() {
+  closeModal();
+  // Coordenadas del GeoJSON proporcionado
+  var geojsonCoords = [
+      [-72.5034586813827, 7.901842211990385],
+      [-72.50341367351974, 7.901984445038792],
+      [-72.50319077743637, 7.901914389961036],
+      [-72.50309861847914, 7.902200978838394],
+      [-72.50298074074291, 7.902169135639724]
+  ];
+
+  // Crea un objeto GeoJSON Feature con las coordenadas
+  var geojsonFeature = {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+          "coordinates": geojsonCoords,
+          "type": "LineString"
+      }
+  };
+
+  // Crea una capa GeoJSON en Leaflet y añádela al mapa
+  var geojsonLayer = L.geoJSON(geojsonFeature).addTo(map);
+
+  // Después de 6 segundos, elimina la capa GeoJSON
+  setTimeout(function() {
+      map.removeLayer(geojsonLayer);
+  }, 6000);
+
+  // Después de trazar la ruta, cierra el modal
+ 
+});
+       </script>
+
+   <!-- Ventana modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <!-- Contenido de la ventana modal -->
+      <h2>Edificio Administrativo</h2>
+      <img src="../src/img/oficina.gif" alt="" style="display: block; margin: 0 auto; border-radius: 3px; width: 150px;">
+      <p>En este edificio encontrarás las oficinas directivas del Sena.</p>
+      <!-- Botón para cerrar la ventana modal -->
+      <button onclick="closeModal()" class="btn-info">Cerrar</button>
+  </div>
+</div>
+
+        
+    
+      <div id="map"> </div>
+
+
+    
+        <aside id="cuentas">
+            <section id="twitter">
+                <!-- Aquí irá tu código para la cuenta de Twitter -->
+                <p><a href="https://x.com/SENAComunica?s=20" target="_blank" rel="noopener">Twitter</a></p>
+
+            </section>
+    
+            <section id="instagram">
+                <!-- Aquí irá tu código para la cuenta de Instagram -->
+                <p><a href="https://www.instagram.com/senacomunica/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener">Instagram</a></p>
+            </section>
+        </aside>
+    </main>
+ 
+    <footer>
+        <p>&copy; 2023 Tu Empresa | <a href="#">Términos de Servicio</a> | <a href="#">Política de Privacidad</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    
+  
+   
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="../js/MapaCies.js"></script>
+    <script src="../js/ModoOscuro.js"></script>
+    <script src="../js/modalTuto.js"></script>
+    <script src="../js/BarraDeBusqueda.js"></script>
+    <script src="../js/Trazado-de-rutas.js"></script>
+    
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../STYLE/webStyle.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <header>
+
+        <div class="header-container">
+
+            <div class="item-header-1"><img src="../src/img/Logo-gisp.jpeg" title="Logo-gisp" alt="Logo-gisp"></div>
+            <div class="item-header-2"><a href="index.html">INICIO</a></div>
+            <div class="item-header-3">
+                <a href="">ACERCA DE</a>
+                <div class="dropdown-content">
+                    <a href="Quienes_somos.html">QUIENES SOMOS</a>
+                </div>
+            </div>
+            <div class="item-header-4">
+                <a href="">MAPAS</a>
+                <div class="dropdown-content">
+                    <a href="#">CIES</a>
+                    <a href="#">CEDRUM</a>
+                    <a href="#">CALZADO</a>
+                </div>
+            </div>
+          
+            <div class="item-header-6 config-dropdown">
+                <img src="../src/icon/ajuste.png" title="herramientas" alt="herramientas">
+                <select id="" name="">
+                    <option value="perfil">Perfil</option>
+                    <option value="tutorial">Tutorial</option>
+                    <option value="modo-oscuro">Modo Oscuro</option>
+                </select>
+            </div>
+        </div>
+
+    </header>
+<br><br><br>
+    <main>
+      <div class="busqueda">
+        <form id="search-form">
+          <input name="busca_zona" type="text" id="zona-input" placeholder="Buscar zona..." required />
+          <button id="miBoton" type="submit">Buscar</button>
+        </form>
+      </div>
+      <div id="map"> </div>
+      
+    
+        <aside id="cuentas">
+            <section id="twitter">
+                <!-- Aquí irá tu código para la cuenta de Twitter -->
+                <p><a href="https://x.com/SENAComunica?s=20" target="_blank">Twitter</a></p>
+
+            </section>
+    
+            <section id="instagram">
+                <!-- Aquí irá tu código para la cuenta de Instagram -->
+                <p><a href="https://www.instagram.com/senacomunica/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank">Instagram</a></p>
+            </section>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Tu Empresa | <a href="#">Términos de Servicio</a> | <a href="#">Política de Privacidad</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+    <script src="../js/MapaCalzado.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</body>
+</html>
